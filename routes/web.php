@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\AdminController;
-use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\logoutController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\HomeController;
@@ -33,7 +33,7 @@ Route::post('daftar/formulir', [GuestController::class, 'formulir'])->name('gues
 
 // Authentication
 Route::get('login', [LoginController::class, 'index'])->name('login');
-Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('logout', [LogoutController::class, 'logout'])->name('logout');
 Route::post('login/auth', [LoginController::class, 'authenticate'])->name('auth');
 
 // Forgot Password
