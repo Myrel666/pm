@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GuestController;
@@ -31,9 +32,9 @@ Route::post('daftar/formulir', [GuestController::class, 'formulir'])->name('gues
 
 
 // Authentication
-Route::get('login', [AuthController::class, 'index'])->name('login');
+Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-Route::post('login/auth', [AuthController::class, 'authenticate'])->name('auth');
+Route::post('login/auth', [LoginController::class, 'authenticate'])->name('auth');
 
 // Forgot Password
 Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');

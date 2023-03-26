@@ -44,15 +44,4 @@ class LoginController extends Controller
         }
         return redirect()->back()->with('message', 'Email atau Password anda salah!');
     }
-
-    /**
-     * Logout 
-     * 
-     */
-    public function logout()
-    {
-        Auth::logout();
-
-        return redirect()->intended('login');
-    }
 }
